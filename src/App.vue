@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <BugConsole msg="Welcome to Your Vue.js App"/>
+    <BugConsole msg="BUG-console"/>
   </div>
 </template>
 
