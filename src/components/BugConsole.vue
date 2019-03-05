@@ -1,14 +1,19 @@
 <template>
   <div class="console">
     <h1>{{ msg }}</h1>
-    <div v-html="dev_id">
-
-    </div>
-    <div v-html="movement">
-      
-    </div>
-    <div v-html="action">
-      
+    <div class="container">
+      <table>
+        <tr>
+          <th>Device ID</th>
+          <th>Movement</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td v-html="dev_id"></td>
+          <td v-html="movement"></td>
+          <td v-html="action"></td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
