@@ -12,6 +12,9 @@ export default {
   name: 'app',
   components: {
     BugConsole
+  },
+  mounted () {
+    this.$mqtt.subscribe('BUG/#')
   }
 }
 </script>
