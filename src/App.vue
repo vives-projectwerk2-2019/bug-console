@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="BUG logo" src="./assets/logo.png" height="25%" width="25%">
     <BugConsole msg="BUG-console"/>
   </div>
 </template>
