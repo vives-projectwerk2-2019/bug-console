@@ -3,16 +3,15 @@
     <h1>{{ msg }}</h1>
     <div class="container">
       <table>
-        <tr>
-          <th>Device ID</th>
-          <th>Movement</th>
-          <th>Action</th>
-        </tr>
-        <tr>
-          <td v-html="dev_id"></td>
-          <td v-html="movement"></td>
-          <td v-html="action"></td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Device ID</th>
+            <th>Movement</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody v-html="newrow">
+        </tbody>
       </table>
     </div>
   </div>
@@ -26,17 +25,15 @@ export default {
   },
   data () {
     return {
-      dev_id:'dev_id:<br>',
-      movement:'movement:<br>',
-      action:'action:<br>'
+      newrow:' '
     }
   },
   mqtt: {
     'BUG/TTN' (data) {
       var parsed = JSON.parse(data);
-      this.dev_id = this.dev_id + parsed.dev_id + '<br>';
-      this.movement = this.movement + parsed.movement + '<br>';
-      this.action = this.action + parsed.action + '<br>';
+      this.newrow = this.newrow + '<tr>'+'<td>' + parsed.dev_id + '</td>'
+                    + '<td>' + parsed.movement + '</td>'
+                    + '<td>' + parsed.action + '</td>' +'</tr>' + '<br>'
     }
   }
 }
