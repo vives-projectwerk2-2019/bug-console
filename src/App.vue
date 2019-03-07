@@ -14,7 +14,7 @@ export default {
     BugConsole
   },
   mounted () {
-    this.$mqtt.subscribe('BUG/#')
+    this.$mqtt.subscribe('TTN')
   }
 }
 </script>

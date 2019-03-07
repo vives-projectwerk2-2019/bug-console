@@ -29,7 +29,7 @@ export default {
     }
   },
   mqtt: {
-    'BUG/TTN' (data) {
+    'TTN' (data) {
       var parsed = JSON.parse(data);
       this.newrow = this.newrow + '<tr>'+'<td>' + parsed.dev_id + '</td>'
                     + '<td>' + parsed.movement + '</td>'
