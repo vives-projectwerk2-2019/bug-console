@@ -5,6 +5,7 @@
       <table>
         <thead>
           <tr>
+            <th>Time</th>
             <th>Device ID</th>
             <th>Movement</th>
             <th>Action</th>
@@ -31,11 +32,20 @@ export default {
   mqtt: {
     'TTN' (data) {
       var parsed = JSON.parse(data);
-      this.newrow = this.newrow + '<tr>'+'<td>' + parsed.dev_id + '</td>'
+      this.newrow = this.newrow + '<tr>'+'<td>' + getTime() + '</td>' +'<td>' + parsed.dev_id + '</td>'
                     + '<td>' + parsed.movement + '</td>'
-                    + '<td>' + parsed.action + '</td>' +'</tr>' + '<br>'
+                    + '<td>' + parsed.action + '</td>' +'</tr>'
     }
   }
+}
+
+function getTime() {
+  let time = new Date((Date.now()));
+  let hours = time.getUTCHours()+1;
+  let minutes = time.getUTCMinutes();
+  let seconds = time.getUTCSeconds();
+  let milliseconds = time.getUTCMilliseconds();
+  return hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
 }
 </script>
 
