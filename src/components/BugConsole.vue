@@ -2,18 +2,20 @@
   <div class="console">
     <h1>{{ msg }}</h1>
     <div class="container">
-      <table>
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Device ID</th>
-            <th>Movement</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody v-html="newrow">
-        </tbody>
-      </table>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Device ID</th>
+              <th>Movement</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody v-html="newrow">
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -50,19 +52,22 @@ function getTime() {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<style>
+
+tbody {
+    display:block;
+    height:640px;
+    overflow:auto;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+thead {
+    width: calc( 100% - 1em )
 }
-a {
-  color: #42b983;
+table {
+    width:100%;
 }
 </style>
