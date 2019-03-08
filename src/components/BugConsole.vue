@@ -34,9 +34,9 @@ export default {
   mqtt: {
     'TTN' (data) {
       var parsed = JSON.parse(data);
-      this.newrow = this.newrow + '<tr>'+'<td>' + getTime() + '</td>' +'<td>' + parsed.dev_id + '</td>'
+      this.newrow = '<tr>'+'<td>' + getTime() + '</td>' +'<td>' + parsed.dev_id + '</td>'
                     + '<td>' + parsed.movement + '</td>'
-                    + '<td>' + parsed.action + '</td>' +'</tr>'
+                    + '<td>' + parsed.action + '</td>' +'</tr>' + this.newrow
     }
   }
 }
